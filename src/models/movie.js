@@ -57,10 +57,11 @@ const createMovieTable = async () => {
 						JSON.stringify(err, null, 2)
 					);
 			} else {
-				console.log(
-					"Created Table. Table JSON:",
-					JSON.stringify(data, null, 2)
-				);
+				// console.log(
+				// 	"Table Created. Table JSON:",
+				// 	JSON.stringify(data, null, 2)
+				// );
+				console.log("Table Created");
 				if (data.TableDescription.TableStatus === "ACTIVE")
 					return await loadMovieTableData();
 			}
