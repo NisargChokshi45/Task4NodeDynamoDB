@@ -4,21 +4,28 @@
   "description": "Exploring DynamoDB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },
   "keywords": [
     "DynamoDB"
   ],
+  "jest": {
+    "testEnvironment": "node",
+    "preset": "@shelf/jest-dynamodb"
+  },
   "author": "Nisarg Chokshi",
   "license": "ISC",
   "dependencies": {
+    "@shelf/jest-dynamodb": "^1.8.1",
     "aws-sdk": "^2.880.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jest": "^26.6.3",
     "joi": "^17.4.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "supertest": "^6.1.3"
   }
 }

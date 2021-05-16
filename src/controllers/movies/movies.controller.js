@@ -132,7 +132,7 @@ const deleteMovie = async (req, res, next) => {
 			typeof year !== "number" ||
 			typeof title !== "string"
 		) {
-			res.status(404);
+			res.status(406);
 			return res.json(
 				errorFunction(true, "Data required to Delete Movie")
 			);
@@ -239,10 +239,10 @@ const updateMovie = async (req, res, next) => {
 				};
 				docClient.update(params, (err, data) => {
 					if (err) {
-						console.log(
-							"Unable to Update Movie. Error JSON:",
-							JSON.stringify(err, null, 2)
-						);
+						// console.log(
+						// 	"Unable to Update Movie. Error JSON:",
+						// 	JSON.stringify(err, null, 2)
+						// );
 						res.status(400);
 						return res.json(
 							errorFunction(
